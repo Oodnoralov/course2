@@ -1,29 +1,122 @@
 package pro.sky.java.course2.lesson1;
+import pro.sky.java.course2.lesson1.Drivers.DriverBus;
+import pro.sky.java.course2.lesson1.Drivers.DriverCar;
+import pro.sky.java.course2.lesson1.Drivers.DriverTruck;
+import pro.sky.java.course2.lesson1.Transport.*;
 
 public class Main {
+
     public static void main(String[] args) {
-        Car granta = new Car("Lada","Granta","yellow", 2015, "Russia", 260, 1.6);
-        Car audi = new Car("Audi","a4", "Black", 2017, "Germany", 340, 2.5);
-        Car bmw = new Car("BMW","m5", "red", 2020, "Germany", 400, 4.4);
-        Car ford = new Car("ford", "mustang", "white", 2010, "USA", 370, 5.2);
-        Car greatwall = new Car("GreateWall", "Hover", "green", 2011, "Chine", 250,2.2);
-        Bus fordTransit = new Bus("Ford", "Transit", "white", 2015, "USA", 160);
-        Bus scania = new Bus("Scania", "Higer", "silver", 2011, "Sweden", 220);
-        Bus paz = new Bus("ПАЗ", "3204", "white", 2015, "Россия", 160);
+
+        DriverBus driver1 = new DriverBus("Слава",true, 5);
+        DriverCar driver2 = new DriverCar("Игнат", false, 15);
+        DriverTruck driver3 = new DriverTruck("Тимофей", true, 21);
+        DriverBus driver4 = new DriverBus("Олег",true, 5);
+        DriverCar driver5 = new DriverCar("Илья", false, 15);
+        DriverTruck driver6 = new DriverTruck("Антон", true, 21);
+        DriverBus driver7 = new DriverBus("Гена",true, 5);
+        DriverCar driver8 = new DriverCar("Саша", false, 15);
+        DriverTruck driver9 = new DriverTruck("Ирина", true, 21);
+        DriverBus driver10 = new DriverBus("Ярик",true, 5);
+        DriverCar driver11 = new DriverCar("Юра", false, 15);
+        DriverTruck driver12 = new DriverTruck("Рома", true, 21);
+
+        Car granta = new Car(
+                "Lada",
+                "Granta",
+                1.6,
+                driver2);
+        Car audi = new Car(
+                "Audi",
+                "a4",
+                2.5,
+                driver5);
+        Car bmw = new Car(
+                "BMW",
+                "m5",
+                4.4,
+                driver8);
+        Car ford = new Car(
+                "ford",
+                "mustang",
+                5.2,
+                driver11);
+
+        Bus lotos = new Bus(
+                "Лотос",
+                "206",
+                5.3,
+                driver1);
+        Bus Daeewoo = new Bus(
+                "Daewoo",
+                "BC212MA",
+                11,
+                driver4);
+        Bus iveco = new Bus(
+                "Iveco",
+                "FBI 83 MR",
+                3,
+                driver7);
+        Bus bogdan = new Bus(
+                "Богдан",
+                "А-30220",
+                5.7,
+                driver10);
+
+        Truck honguan = new Truck(
+                "Honguan",
+                "CQ1163TLG461",
+                9.7,
+                driver3);
+        Truck dongfeng = new Truck(
+                "Dongfeng",
+                "DFA 1120",
+                8.3,
+                driver6);
+        Truck nissan = new Truck(
+                "Nissan",
+                "146",
+                14.6,
+                driver9);
+        Truck maz = new Truck(
+                "МАЗ",
+                "5340В9-470-000",
+                9,
+                driver12);
 
 
-        System.out.println(granta + "\n" + "объем двигателя " + granta.engineValue + "\n");
-        System.out.println(audi + "\n" + "объем двигателя " + audi.engineValue + "\n");
-        System.out.println(bmw + "\n" + "объем двигателя " + bmw.engineValue + "\n");
-        System.out.println(ford + "\n" + "объем двигателя " + ford.engineValue + "\n");
-        System.out.println(greatwall + "\n" + "объем двигателя " + greatwall.engineValue);
-        System.out.println(fordTransit + "\n");
-        System.out.println(scania + "\n");
-        System.out.println(paz);
+
+
+
+
+
+
+        String allCars;
+        allCars = maz.toString() + "\n\n" + nissan.toString()+ "\n" + dongfeng.toString() + "\n\n" + honguan.toString() + "\n\n" + iveco.toString()+
+        bogdan.toString() + "\n\n" + Daeewoo.toString() ;
+        //System.out.println(allCars);
+        System.out.println("================\n");
+        printInfo(maz);
+        printInfo(bmw);
+        printInfo(ford);
+        printInfo(granta);
+        printInfo(lotos);
+        printInfo(honguan);
+
+
+
+
+
 
 
         
 
     }
+
+    private static void printInfo(Transport<?> transport) {
+        System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand()+ transport.getModel()+ " И будет участвовать в заезде");
+    }
+
+
 
 }
