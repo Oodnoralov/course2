@@ -4,6 +4,8 @@ import pro.sky.java.course2.lesson1.Drivers.DriverCar;
 import pro.sky.java.course2.lesson1.Drivers.DriverTruck;
 import pro.sky.java.course2.lesson1.Transport.*;
 
+import java.sql.SQLOutput;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -25,64 +27,64 @@ public class Main {
                 "Lada",
                 "Granta",
                 1.6,
-                driver2);
+                driver2, Car.BodyType.SEDAN);
         Car audi = new Car(
                 "Audi",
                 "a4",
                 2.5,
-                driver5);
+                driver5, Car.BodyType.SEDAN);
         Car bmw = new Car(
                 "BMW",
                 "m5",
                 4.4,
-                driver8);
+                driver8, Car.BodyType.SEDAN);
         Car ford = new Car(
                 "ford",
                 "mustang",
                 5.2,
-                driver11);
+                driver11, Car.BodyType.SEDAN);
 
         Bus lotos = new Bus(
                 "Лотос",
                 "206",
                 5.3,
-                driver1);
+                driver1, Bus.Capacity.SMALL);
         Bus Daeewoo = new Bus(
                 "Daewoo",
                 "BC212MA",
                 11,
-                driver4);
+                driver4, Bus.Capacity.AVERAGE);
         Bus iveco = new Bus(
                 "Iveco",
                 "FBI 83 MR",
                 3,
-                driver7);
+                driver7, Bus.Capacity.BIG);
         Bus bogdan = new Bus(
                 "Богдан",
                 "А-30220",
                 5.7,
-                driver10);
+                driver10, Bus.Capacity.SMALL);
 
         Truck honguan = new Truck(
                 "Honguan",
                 "CQ1163TLG461",
                 9.7,
-                driver3);
+                driver3, Truck.Carrying.N1);
         Truck dongfeng = new Truck(
                 "Dongfeng",
                 "DFA 1120",
                 8.3,
-                driver6);
+                driver6, Truck.Carrying.N2);
         Truck nissan = new Truck(
                 "Nissan",
                 "146",
                 14.6,
-                driver9);
+                driver9, Truck.Carrying.N1);
         Truck maz = new Truck(
                 "МАЗ",
                 "5340В9-470-000",
                 9,
-                driver12);
+                driver12, Truck.Carrying.N3);
 
 
 
@@ -102,6 +104,7 @@ public class Main {
         printInfo(granta);
         printInfo(lotos);
         printInfo(honguan);
+        System.out.println(Car.BodyType.COUPE.toString());
 
 
 

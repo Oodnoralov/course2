@@ -25,6 +25,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     }
     public abstract void drive();
     public abstract void stop();
+    public abstract void printType();
     public T getDriver() {
         return driver;
     }
