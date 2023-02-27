@@ -1,4 +1,5 @@
 package pro.sky.java.course2.lesson1;
+import pro.sky.java.course2.lesson1.Drivers.Driver;
 import pro.sky.java.course2.lesson1.Drivers.DriverBus;
 import pro.sky.java.course2.lesson1.Drivers.DriverCar;
 import pro.sky.java.course2.lesson1.Drivers.DriverTruck;
@@ -6,6 +7,8 @@ import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 import pro.sky.java.course2.lesson1.Transport.*;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -92,6 +95,34 @@ public class Main {
             e.printStackTrace();
         }
 
+        Mechanic mechanic1 = new Mechanic("Илья", "company");
+        Mechanic mechanic2 = new Mechanic("Игорь", "company");
+        Mechanic mechanic3 = new Mechanic("Глеб", "company");
+
+        lotos.addMechanic(mechanic1);
+        iveco.addMechanic(mechanic2);
+        ford.addMechanic(mechanic3);
+        List<Driver> drivers = new ArrayList<>();
+        drivers.add(driver1);
+        drivers.add(driver2);
+        drivers.add(driver3);
+        drivers.add(driver4);
+        drivers.add(driver5);
+        drivers.add(driver6);
+        drivers.add(driver7);
+        drivers.add(driver8);
+        drivers.add(driver9);
+        drivers.add(driver10);
+        drivers.add(driver11);
+        drivers.add(driver12);
+        List<Transport<?>> cars = new ArrayList<>();
+        cars.add(lotos);
+        cars.add(iveco);
+        cars.add(ford);
+
+
+
+
 
         String allCars;
         allCars = maz.toString() + "\n\n" + nissan.toString()+ "\n" + dongfeng.toString() + "\n\n" + honguan.toString() + "\n\n" + iveco.toString()+
@@ -105,6 +136,16 @@ public class Main {
         printInfo(lotos);
         printInfo(honguan);
         System.out.println(Car.BodyType.COUPE.toString());
+        for (Transport<?> transport: cars) {
+            System.out.println(transport + "\n" + transport.getDriver() + "" + transport.getMechanics());
+        }
+        Station station = new Station();
+        station.addTransport(lotos);
+        station.addTransport(iveco);
+        station.addTransport(ford);
+        station.service();
+        station.service();
+        station.service();
 
 
 

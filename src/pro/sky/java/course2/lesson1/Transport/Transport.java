@@ -2,6 +2,10 @@ package pro.sky.java.course2.lesson1.Transport;
 
 import pro.sky.java.course2.lesson1.Drivers.*;
 import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
+import pro.sky.java.course2.lesson1.Mechanic;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Transport<T extends Driver> implements Competing {
     private String brand;
@@ -9,7 +13,15 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     private double engineValue;
     private final T driver;
+    private final List<Mechanic> mechanics= new ArrayList<>();
 
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+    public void addMechanic(Mechanic mechanic) {
+        mechanics.add(mechanic);
+
+    }
 
     public Transport(String brand, String model, double engineValue, T driver) {
         this.brand = brand;
@@ -44,6 +56,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     public double getEngineValue() {
         return engineValue;
     }
+
 
 
 

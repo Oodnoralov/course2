@@ -16,4 +16,9 @@ public abstract class Driver {
     public boolean isHasDriverLicense() {
         return license;
     }
+
+    @Override
+    public String toString() {
+        return "водитель  " + name;
+    }
 }
