@@ -13,4 +13,7 @@ public abstract class Driver {
     public String getName() {
         return this.name;
     }
+    public boolean isHasDriverLicense() {
+        return license;
+    }
 }

@@ -2,6 +2,7 @@ package pro.sky.java.course2.lesson1;
 import pro.sky.java.course2.lesson1.Drivers.DriverBus;
 import pro.sky.java.course2.lesson1.Drivers.DriverCar;
 import pro.sky.java.course2.lesson1.Drivers.DriverTruck;
+import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 import pro.sky.java.course2.lesson1.Transport.*;
 
 import java.sql.SQLOutput;
@@ -85,12 +86,11 @@ public class Main {
                 "5340В9-470-000",
                 9,
                 driver12, Truck.Carrying.N3);
-
-
-
-
-
-
+        try {
+            lotos.diagnostic();
+        } catch (DiagnosticFailedException e) {
+            e.printStackTrace();
+        }
 
 
         String allCars;

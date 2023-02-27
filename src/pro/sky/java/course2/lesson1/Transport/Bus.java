@@ -1,6 +1,7 @@
 package pro.sky.java.course2.lesson1.Transport;
 
 import pro.sky.java.course2.lesson1.Drivers.DriverBus;
+import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 
 public class Bus extends Transport<DriverBus> {
     public enum Capacity {
@@ -63,5 +64,11 @@ public class Bus extends Transport<DriverBus> {
     public void stop() {
         System.out.println("Автобус остановился");
     }
+    @Override
+
+    public boolean diagnostic() throws DiagnosticFailedException {
+        return false;
+    }
+
 
 }

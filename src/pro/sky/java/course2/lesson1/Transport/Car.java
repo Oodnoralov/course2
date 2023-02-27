@@ -1,6 +1,7 @@
 package pro.sky.java.course2.lesson1.Transport;
 
 import pro.sky.java.course2.lesson1.Drivers.DriverCar;
+import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 
 public class Car extends Transport<DriverCar>  {
     public enum BodyType {
@@ -59,6 +60,16 @@ public class Car extends Transport<DriverCar>  {
     @Override
     public void stop() {
         System.out.println("Автомобиль остановился");
+    }
+
+    @Override
+    public boolean diagnostic() throws DiagnosticFailedException {
+if (getDriver() != null && getDriver().isHasDriverLicense()) {
+    return true;
+}
+else {
+    throw new DiagnosticFailedException();
+}
     }
 
 

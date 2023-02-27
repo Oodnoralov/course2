@@ -1,6 +1,7 @@
 package pro.sky.java.course2.lesson1.Transport;
 
 import pro.sky.java.course2.lesson1.Drivers.DriverTruck;
+import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 
 public class Truck extends Transport<DriverTruck> {
     public enum Carrying {
@@ -24,20 +25,21 @@ public class Truck extends Transport<DriverTruck> {
         public Float getMax() {
             return max;
         }
+
         @Override
-        public String toString(){
-            if(max != null) {
+        public String toString() {
+            if (max != null) {
                 return "грузоподъемность от : " + min + " тонн " + "до " + min;
-            }
-            else {
+            } else {
                 return "грузоподъемность от : " + min;
             }
         }
     }
+
     private Carrying carrying;
 
-    public Truck(String brand, String model, double engineValue,DriverTruck driver, Carrying carrying) {
-        super(brand, model, engineValue,driver);
+    public Truck(String brand, String model, double engineValue, DriverTruck driver, Carrying carrying) {
+        super(brand, model, engineValue, driver);
         this.carrying = carrying;
 
     }
@@ -64,12 +66,20 @@ public class Truck extends Transport<DriverTruck> {
         System.out.println("Грузовик начал движение");
 
     }
+
     @Override
     public void stop() {
         System.out.println("Грузовик остановился");
     }
 
+    @Override
+    public boolean diagnostic() throws DiagnosticFailedException {
+        if (getDriver() != null && getDriver().isHasDriverLicense()) {
+            return true;
+        } else {
+            throw new DiagnosticFailedException();
+        }
 
 
-
+    }
 }

@@ -1,6 +1,7 @@
 package pro.sky.java.course2.lesson1.Transport;
 
 import pro.sky.java.course2.lesson1.Drivers.*;
+import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 
 public abstract class Transport<T extends Driver> implements Competing {
     private String brand;
@@ -26,6 +27,8 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void drive();
     public abstract void stop();
     public abstract void printType();
+
+    public abstract boolean diagnostic() throws DiagnosticFailedException;
     public T getDriver() {
         return driver;
     }
@@ -41,6 +44,8 @@ public abstract class Transport<T extends Driver> implements Competing {
     public double getEngineValue() {
         return engineValue;
     }
+
+
 
     public void setBrand(String brand) {
         if(!brand.isBlank() && !brand.isEmpty())
