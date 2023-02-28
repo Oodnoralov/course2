@@ -37,4 +37,5 @@ public class Mechanic {
                 "Механик: " + name + '\'' +
                 "из компании: " + company + '\'';
     }
+    //
 }

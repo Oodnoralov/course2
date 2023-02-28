@@ -26,7 +26,7 @@ public class Main {
         DriverBus driver10 = new DriverBus("Ярик",true, 5);
         DriverCar driver11 = new DriverCar("Юра", false, 15);
         DriverTruck driver12 = new DriverTruck("Рома", true, 21);
-
+//
         Car granta = new Car(
                 "Lada",
                 "Granta",
