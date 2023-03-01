@@ -6,9 +6,10 @@ import pro.sky.java.course2.lesson1.Drivers.DriverTruck;
 import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 import pro.sky.java.course2.lesson1.Transport.*;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
 
@@ -119,6 +120,20 @@ public class Main {
         cars.add(lotos);
         cars.add(iveco);
         cars.add(ford);
+        Set<Driver> driverlist = new HashSet<>();
+        driverlist.add(driver1);
+        driverlist.add(driver2);
+        driverlist.add(driver4);
+        driverlist.add(driver6);
+        driverlist.add(driver6);
+
+        Object[] driverArr = driverlist.toArray();
+        for (int i = 0; i < driverArr.length; i++) {
+            System.out.println(driverArr[i]);
+        }
+
+
+
 
 
 
@@ -153,9 +168,11 @@ public class Main {
 
 
 
+
         
 
     }
+
 
     private static void printInfo(Transport<?> transport) {
         System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand()+ transport.getModel()+ " И будет участвовать в заезде");
