@@ -101,7 +101,7 @@ public class Main {
 
         lotos.addMechanic(mechanic1);
         iveco.addMechanic(mechanic2);
-        ford.addMechanic(mechanic3);
+        //ford.addMechanic(mechanic3);
         List<Driver> drivers = new ArrayList<>();
         drivers.add(driver1);
         drivers.add(driver2);

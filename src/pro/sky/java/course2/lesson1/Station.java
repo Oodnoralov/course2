@@ -19,8 +19,13 @@ public class Station {
     public void service()  {
         Transport<?> transport = transportQueue.poll();
         if (transport != null) {
+            if (!transport.getMechanics().isEmpty()) {
 
-            transport.getMechanics().get(0).maintenance();
+                transport.getMechanics().get(0).maintenance();
+            }
+            else {
+                System.out.println("у этого автомобиля нет механиков");
+            }
 
         }
 
