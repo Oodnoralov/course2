@@ -125,7 +125,7 @@ public class Main {
         driverlist.add(driver2);
         driverlist.add(driver4);
         driverlist.add(driver6);
-        driverlist.add(driver6);
+        driverlist.add(new DriverTruck("Антон", true, 21));
 
         Object[] driverArr = driverlist.toArray();
         for (int i = 0; i < driverArr.length; i++) {
