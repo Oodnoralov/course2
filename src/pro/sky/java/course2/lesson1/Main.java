@@ -6,10 +6,8 @@ import pro.sky.java.course2.lesson1.Drivers.DriverTruck;
 import pro.sky.java.course2.lesson1.Exceptions.DiagnosticFailedException;
 import pro.sky.java.course2.lesson1.Transport.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.lang.reflect.MalformedParametersException;
+import java.util.*;
 
 public class Main {
 
@@ -90,11 +88,11 @@ public class Main {
                 "5340В9-470-000",
                 9,
                 driver12, Truck.Carrying.N3);
-        try {
-            lotos.diagnostic();
-        } catch (DiagnosticFailedException e) {
-            e.printStackTrace();
-        }
+        //try {
+       //     lotos.diagnostic();
+       // } catch (DiagnosticFailedException e) {
+       //     e.printStackTrace();
+       // }
 
         Mechanic mechanic1 = new Mechanic("Илья", "company");
         Mechanic mechanic2 = new Mechanic("Игорь", "company");
@@ -127,10 +125,22 @@ public class Main {
         driverlist.add(driver6);
         driverlist.add(new DriverTruck("Антон", true, 21));
 
-        Object[] driverArr = driverlist.toArray();
-        for (int i = 0; i < driverArr.length; i++) {
-            System.out.println(driverArr[i]);
+
+        Map<Transport<?>,Mechanic> transportMechanicMap = new HashMap<>();
+        for (Transport<?> car : cars) {
+            for (Mechanic mechanic : car.getMechanics()){
+                transportMechanicMap.put(car, mechanic);
+            }
         }
+        System.out.println(transportMechanicMap);
+        for (Map.Entry<Transport<?>, Mechanic> entry: transportMechanicMap.entrySet()) {
+            System.out.println(entry.getKey() + "-" + entry.getValue());
+        }
+
+       // Object[] driverArr = driverlist.toArray();
+       // for (int i = 0; i < driverArr.length; i++) {
+       //     System.out.println(driverArr[i]);
+        //}
 
 
 
@@ -143,17 +153,16 @@ public class Main {
         allCars = maz.toString() + "\n\n" + nissan.toString()+ "\n" + dongfeng.toString() + "\n\n" + honguan.toString() + "\n\n" + iveco.toString()+
         bogdan.toString() + "\n\n" + Daeewoo.toString() ;
         //System.out.println(allCars);
-        System.out.println("================\n");
-        printInfo(maz);
-        printInfo(bmw);
-        printInfo(ford);
-        printInfo(granta);
-        printInfo(lotos);
-        printInfo(honguan);
-        System.out.println(Car.BodyType.COUPE.toString());
-        for (Transport<?> transport: cars) {
-            System.out.println(transport + "\n" + transport.getDriver() + "" + transport.getMechanics());
-        }
+        //System.out.println("================\n");
+        //printInfo(maz);
+       // printInfo(bmw);
+       // printInfo(ford);
+       // printInfo(granta);
+//        printInfo(honguan);
+       // System.out.println(Car.BodyType.COUPE.toString());
+        //for (Transport<?> transport: cars) {
+         //   System.out.println(transport + "\n" + transport.getDriver() + "" + transport.getMechanics());
+       // }
         Station station = new Station();
         station.addTransport(lotos);
         station.addTransport(iveco);
