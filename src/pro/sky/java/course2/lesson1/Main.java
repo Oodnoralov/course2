@@ -63,10 +63,10 @@ public class Main {
                 3,
                 driver7, Bus.Capacity.BIG);
         Bus bogdan = new Bus(
-                "Богдан",
-                "А-30220",
-                5.7,
-                driver10, Bus.Capacity.SMALL);
+                "Лотос",
+                "206",
+                5.3,
+                driver1, Bus.Capacity.SMALL);
 
         Truck honguan = new Truck(
                 "Honguan",
@@ -118,6 +118,8 @@ public class Main {
         cars.add(lotos);
         cars.add(iveco);
         cars.add(ford);
+       cars.add(maz);
+
         Set<Driver> driverlist = new HashSet<>();
         driverlist.add(driver1);
         driverlist.add(driver2);
@@ -126,14 +128,18 @@ public class Main {
         driverlist.add(new DriverTruck("Антон", true, 21));
 
 
-        Map<Transport<?>,Mechanic> transportMechanicMap = new HashMap<>();
+        Map<Transport<?>,List<Mechanic>> transportMechanicMap = new HashMap<>();
+
         for (Transport<?> car : cars) {
-            for (Mechanic mechanic : car.getMechanics()){
-                transportMechanicMap.put(car, mechanic);
-            }
+
+
+
+                transportMechanicMap.put(car, car.getMechanics());
+
         }
-        System.out.println(transportMechanicMap);
-        for (Map.Entry<Transport<?>, Mechanic> entry: transportMechanicMap.entrySet()) {
+        //transportMechanicMap.put(lotos,lotos.getMechanics().get(0));
+        //System.out.println(transportMechanicMap);
+        for (Map.Entry<Transport<?>, List<Mechanic>> entry: transportMechanicMap.entrySet()) {
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
 
