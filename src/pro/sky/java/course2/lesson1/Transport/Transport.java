@@ -87,7 +87,7 @@ public abstract class Transport<T extends Driver> implements Competing {
         System.out.println("Максимальная скорость гонщика " + getBrand() + " 370 км/ч");
 
     }
-
+    //
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
